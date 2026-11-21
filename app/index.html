@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Leonida Ledger — GTA VI Trophy Guide &amp; Tracker</title>
 <meta name="description" content="An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: every official name, description and grade, a guide with sources, a roadmap to the platinum, missable flags, and a saved checklist.">
+<meta name="theme-color" content="#17131f">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -19,36 +20,35 @@
       </div>
     </div>
     <div class="progress-block" id="progress-block" aria-live="polite">
-      <div class="progress-numbers"><span id="earned-count">0</span><span class="progress-total">/ 55 earned</span></div>
-      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
-      <p class="progress-note" id="progress-note">Platinum: Vice Got a Price! — earn the other 54.</p>
+      <svg class="progress-ring" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Trophy progress ring">
+        <circle class="ring-track" cx="32" cy="32" r="26"></circle>
+        <circle class="ring-fill" id="progress-ring-fill" cx="32" cy="32" r="26" transform="rotate(-90 32 32)"></circle>
+        <text class="ring-percent" id="progress-percent" x="32" y="36" text-anchor="middle">0%</text>
+      </svg>
+      <div class="progress-text">
+        <div class="progress-numbers"><span id="earned-count">0</span><span class="progress-total">/ 55 earned</span></div>
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+        <p class="progress-note" id="progress-note">Platinum: Vice Got a Price! — earn the other 54.</p>
+      </div>
     </div>
   </div>
   <nav class="tabs" id="tabs" aria-label="Guide sections">
     <button type="button" class="tab active" data-view="checklist" id="tab-checklist">Checklist</button>
     <button type="button" class="tab" data-view="roadmap" id="tab-roadmap">Roadmap to Platinum</button>
     <button type="button" class="tab" data-view="missables" id="tab-missables">Missables</button>
+    <button type="button" class="tab" data-view="stats" id="tab-stats">Stats</button>
     <button type="button" class="tab" data-view="about" id="tab-about">About &amp; Sources</button>
   </nav>
 </header>
 
 <main id="main">
+  <noscript><p class="empty-note">This guide needs JavaScript to load its trophy data — enable it and reload the page.</p></noscript>
   <section id="view-checklist" class="view active" aria-label="Trophy checklist">
     <div class="toolbar" id="toolbar">
       <label class="search-box">Search trophies
-        <input type="search" id="search" placeholder="Search name, description or guide…" autocomplete="off">
+        <input type="search" id="search" placeholder="Search name, description or guide…  ( / to focus)" autocomplete="off">
       </label>
-      <div class="filter-group" id="kind-filters" role="group" aria-label="Filter by kind">
-        <button type="button" class="chip active" data-kind="all">All 55</button>
-        <button type="button" class="chip" data-kind="story">Story</button>
-        <button type="button" class="chip" data-kind="missable">Missable</button>
-        <button type="button" class="chip" data-kind="collectibles">Collectibles</button>
-        <button type="button" class="chip" data-kind="activities">Activities</button>
-        <button type="button" class="chip" data-kind="robbery">Robbery</button>
-        <button type="button" class="chip" data-kind="exploration">Exploration</button>
-        <button type="button" class="chip" data-kind="money">Money</button>
-        <button type="button" class="chip" data-kind="online">Online</button>
-      </div>
+      <div class="filter-group" id="kind-filters" role="group" aria-label="Filter by kind"></div>
       <div class="filter-row">
         <label class="select-label">Grade
           <select id="grade-filter">
@@ -64,6 +64,7 @@
       </div>
       <p class="filter-count" id="filter-count"></p>
     </div>
+    <div class="next-up" id="next-up" aria-live="polite"></div>
     <div class="content-split">
       <div class="list-column">
         <ol class="trophy-list" id="trophy-list"></ol>
@@ -82,6 +83,10 @@
     <div id="missables-content"></div>
   </section>
 
+  <section id="view-stats" class="view" aria-label="Progress statistics" hidden>
+    <div id="stats-content"></div>
+  </section>
+
   <section id="view-about" class="view" aria-label="About and sources" hidden>
     <div id="about-content"></div>
   </section>
@@ -97,8 +102,10 @@
         <input type="file" id="import-file" accept="application/json,.json">
       </label>
       <button type="button" id="reset-btn">Reset progress</button>
+      <button type="button" id="mark-visible-btn" class="btn ghost">Mark all shown as earned</button>
     </div>
     <p class="save-status" id="save-status" aria-live="polite"></p>
+    <p class="keys-hint">Keyboard: <kbd>j</kbd>/<kbd>k</kbd> or <kbd>↑</kbd>/<kbd>↓</kbd> move through trophies, <kbd>Enter</kbd> opens the guide, <kbd>e</kbd> toggles earned, <kbd>/</kbd> focuses search, <kbd>1</kbd>–<kbd>5</kbd> switch tabs.</p>
   </div>
   <p class="fine-print">Leonida Ledger is an unofficial fan guide. Grand Theft Auto, GTA and Rockstar Games are trademarks of their owners; this guide uses no Rockstar logo, artwork or game screenshots. Trophy names and descriptions are shown as PlayStation publishes them; every guide is written for this page and cites its sources beside it.</p>
   <p class="fine-print">Built for the make.fun “Build the best GTA 6 trophy guide” bounty. Works fully offline — it loads nothing from the network.</p>

@@ -1,7 +1,9 @@
-// Roadmap data for Leonida Ledger: the three stages to the platinum, the facts
-// at a glance, and the 100% Completion checklist numbers, all from the official
-// trophy descriptions and the cited guides (PowerPyx, KeenGamer, Push Square).
-// The roadmap's stage names, shared by the roadmap page and the detail pane.
+// Roadmap data for Leonida Ledger: the facts at a glance, the three stages
+// to the platinum, the five story chapters with what each one unlocks, the
+// 100% Completion checklist numbers, and the notes on what only looks
+// missable. Everything here comes from the official trophy descriptions and
+// the cited guides (PowerPyx, KeenGamer, Push Square) — the roadmap's stage
+// names are shared by the roadmap page and the detail pane.
 export const STAGE_NAMES = {
   1: 'Stage 1 — Story',
   2: 'Stage 2 — 100% checklist',
@@ -14,7 +16,62 @@ export const PLATINUM_FACTS = [
   { value: '1', label: 'playthrough — everything fits in one run' },
   { value: '0', label: 'online trophies — all 55 are single-player' },
   { value: '1', label: 'potentially missable trophy (Positive Mental Attitude)' },
+  { value: '5', label: 'trophies whose exact method is still unconfirmed' },
+  { value: '28', label: 'hidden trophies — hidden on PlayStation until earned' },
   { value: '15', label: 'manual save slots — keep one at the start and end of each chapter' },
+];
+
+// The five story chapters in order: which trophies pop in each, which
+// missions matter for the platinum, and what each chapter unlocks. The
+// chapter titles are descriptive — the game numbers its chapters, it does
+// not name them — while the missions and unlocks are the ones PowerPyx
+// names in its roadmap.
+export const CHAPTERS = [
+  {
+    number: 1,
+    title: 'Chapter 1 — First days in Leonida',
+    time: 'About 10 hours',
+    text: 'The opening chapter: Gone Fishing, Feng Shui, Down to Earth and Island Dreams. Two questlines start here — Cal’s fishing and Kenton’s treasure diving — and the chapter ends with the first chapter trophy. The one thing that matters for the whole run happens here, in the morning after Down to Earth: the balcony meditation with Lucia at Jason’s house. Do it before leaving the chapter.',
+    missions: ['Gone Fishing', 'Feng Shui', 'Down to Earth', 'Island Dreams'],
+    unlocks: ['Cal’s fishing questline', 'Kenton’s treasure diving', 'The balcony meditation (missable)'],
+    trophyIds: [2, 3],
+  },
+  {
+    number: 2,
+    title: 'Chapter 2 — Two protagonists',
+    time: 'About 15 hours',
+    text: 'Coffee Break unlocks switching between Jason and Lucia, which is what makes the partner trophies, the second-character meditations and the dual workouts possible. Daily Driver unlocks the garage properties and the Vice City Real Estate app, Moses unlocks the Scooter Bros app, and the Thrillbilly Mudclub opens Billy’s questline. Hit Kingpin Bowling is the optional mission for the bowling-alley robbery.',
+    missions: ['Coffee Break', 'Breakfast Run', 'Daily Driver', 'Moses', 'Hit Kingpin Bowling'],
+    unlocks: ['Character switching', 'Scooter Bros app', 'Garage properties', 'Thrillbilly Mudclub'],
+    trophyIds: [4, 8],
+  },
+  {
+    number: 3,
+    title: 'Chapter 3 — Vice City opens up',
+    time: 'About 20 hours',
+    text: 'The chapter that unlocks the money. Credit Check opens bank jobs, payday loans and the Dye Pack Jammer for laundering Marked Bills; Yasmani’s Jewelry Jobs opens jewelry store robberies and the Snap Gun. Andy’s questline (Lucia-only), Randy’s wish list and Tyrone’s Synthetic Labs strand all begin here, and cars with standard trackers can first be registered at Pay ’n’ Spray.',
+    missions: ['Welcome to Vice City', 'The Cartel Heist', 'Credit Check', 'Yasmani’s Jewelry Jobs', 'Clonin’ Keys, Makin’ GS', 'Here, Kitty Kitty'],
+    unlocks: ['Bank jobs and payday loans', 'Dye Pack Jammer', 'Jewelry robberies and the Snap Gun', 'Randy’s wish list'],
+    trophyIds: [5, 9],
+  },
+  {
+    number: 4,
+    title: 'Chapter 4 — The big scores',
+    time: 'About 20 hours',
+    text: 'Three named-mission trophies land in this chapter, and the optional mission That’s Where The Money Is… unlocks bank vault robberies — the best endgame money and the route to Maximum Withdrawal. Vaults pay up to $205,000 each, feed the Marked Bills total, and always trigger a 4-star wanted level, which is also how Hot Together usually pops.',
+    missions: ['Ocean Beach', 'Another Life', 'Child’s Play', 'Headliners', 'VCIA Takedown', 'Starting From Zero', 'That’s Where The Money Is…'],
+    unlocks: ['Bank vault robberies', 'Yasmani’s security-van tips'],
+    trophyIds: [6, 10, 11, 12],
+  },
+  {
+    number: 5,
+    title: 'Chapter 5 — The finale',
+    time: 'About 10 hours',
+    text: 'The last chapter: Operation Savage Glory, then the final mission and the credits. After the credits you return to free-roam, the 100% Completion checklist appears under Progress > Stats, and cheats unlock (do not use them on your platinum save). Everything left from here on is Stage 2 and Stage 3 work.',
+    missions: ['Operation Savage Glory', 'The final mission'],
+    unlocks: ['Free-roam cleanup', '100% Completion checklist'],
+    trophyIds: [7, 13],
+  },
 ];
 
 export const ROADMAP_STAGES = [
@@ -91,4 +148,5 @@ export const MISSABLE_NOTES = [
   'Quests with an hourglass icon are time-sensitive and can fail, but none of them count toward a trophy.',
   'The Criminal Profile can reach Irredeemable, a permanent status that makes police far more aggressive. It does not block any trophy, but avoid it.',
   'The relationship status of Jason and Lucia does not matter for trophies.',
+  'The meditation counter counts both characters at the same spot as +2, and the Chapter 1 balcony meditation adds 1 without being marked as a spot — so the counter can read higher than the number of spots you have visited.',
 ];
